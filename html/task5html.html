@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        td input[type="text"], 
+        td input[type="email"], 
+        td input[type="password"], 
+        td input[type="number"], 
+        td input[type="tel"], 
+        td select, 
+        td textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+            border: none; /* No visible border */
+        }
+        td input[type="checkbox"], 
+        td input[type="radio"] {
+            margin-right: 10px;
+        }
+        td input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        td input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+        td:first-child {
+            text-align: center;
+            font-weight: bold; /* Bold labels */
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td style="text-align:center; font-weight:bold;">First Name</td>
+                <td><input type="text" name="firstname" style="width:100%; box-sizing:border-box; padding:5px;"></td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:bold;">Last Name</td>
+                <td><input type="text" name="lastname" style="width:100%; box-sizing:border-box; padding:5px;"></td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:bold;">Email</td>
+                <td><input type="email" name="email" style="width:100%; box-sizing:border-box; padding:5px;"></td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:bold;">Password</td>
+                <td><input type="password" name="password" style="width:100%; box-sizing:border-box; padding:5px;"></td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:bold;">Re-enter Password</td>
+                <td><input type="password" name="repassword" style="width:100%; box-sizing:border-box; padding:5px;"></td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:bold;">Gender</td>
+                <td>
+                    <div>
+                        <input type="radio" name="gender" value="male" style="margin-right:10px; "> Male                        
+                    </div>
+
+                    <div>
+                        <input type="radio" name="gender" value="female" style="margin-right:10px;"> Female
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:bold;">Age</td>
+                <td><input type="number" name="age" style="width:100%; box-sizing:border-box; padding:5px;"></td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:bold;">Phone Number</td>
+                <td><input type="tel" name="phone" style="width:100%; box-sizing:border-box; padding:5px;"></td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:bold;">Address</td>
+                <td><textarea name="address" style="width:100%; box-sizing:border-box; padding:5px;"></textarea></td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:bold;">State</td>
+                <td><input type="text" name="state" style="width:100%; box-sizing:border-box; padding:5px;"></td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:bold;">Country</td>
+                <td>
+                    <select name="country" style="width:100%; box-sizing:border-box; padding:5px;">
+                        <option value="" selected disabled>Choose your country</option>
+                        <!-- Add options for countries as needed -->
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:bold;">Languages known</td>
+                <td>
+                    <input type="checkbox" name="languages" value="english" style="margin-right:10px;"> English
+                    <input type="checkbox" name="languages" value="kannada" style="margin-right:10px;"> Kannada
+                    <input type="checkbox" name="languages" value="hindi" style="margin-right:10px;"> Hindi
+                    <input type="checkbox" name="languages" value="telugu" style="margin-right:10px;"> Telugu
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="declare" required style="margin-right:10px;"> Hereby I declare all the given details are true
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="https://ethnus.com" target="_blank" , style="margin-left: 70%;">Log in to Ethnus website</a>
+                </td>
+            </tr>
+            
+          
+        </table>
+
+        <button , style="margin-left: 45%;">Register</button>
+    </form>
+</body>
+</html>

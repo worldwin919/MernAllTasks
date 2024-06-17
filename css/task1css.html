@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Table</title>
+    <style>
+        .container {
+            width: 60%;
+            margin: 20px auto;
+            background-color: #01d9ff;
+            border: 1px solid black;
+             border-radius: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 10px;
+            margin: 0 auto;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+            background-color: #01d9ff;
+            border: 1px solid black;
+            border-radius: 20px; /* Rounded corners for all cells */
+        }
+        th {
+            font-weight: bold;
+        }
+
+
+        .circle {
+            width: 100px; /* Set the diameter */
+            height: 100px; /* Set the diameter */
+             border-radius: 50%; /* This makes the div a circle */
+             border: 2px solid rgb(98, 255, 0);
+             display: inline-block;
+
+        }
+
+        .rect{
+            width: 100px; /* Set the diameter */
+            height: 100px; /* Set the diameter */
+             border-radius: 14%; /* This makes the div a circle */
+             border: 2px solid rgb(98, 255, 0);
+             display: inline-block;
+
+        }
+
+        .rectwo{
+            width: 100px;
+            height: 100px; /* Set the diameter */
+             border-radius: 4%; /* This makes the div a circle */
+             border: 2px solid rgb(98, 255, 0);
+             display: inline-block;
+
+        }
+
+        .rectv{
+            width: 100px;
+            height: 100px; /* Set the diameter */
+             border-radius: 30%; /* This makes the div a circle */
+             border: 2px solid rgb(98, 255, 0);
+             display: inline-block;
+        }
+
+        .rects{
+            width: 100px;
+            height: 100px; /* Set the diameter */
+             border-radius: 0 20px 0 20px; /* This makes the div a circle */
+             border: 2px solid rgb(98, 255, 0);
+             display: inline-block;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div style="margin-left: 35%; margin-top: 4%;">
+        <div class="rectwo"></div>
+
+        <div class="rect" style="margin-left: 10px ; margin-right: 10px;"></div>
+
+        <div class="rectv"></div>
+
+    </div>
+
+
+    <div style="margin-left: 35%; margin-top: 2%;">
+        <div class="rect"></div>
+
+        <div class="rectwo" , style="margin-left: 10px ; margin-right: 10px;"></div>
+
+        <div class="rectv"></div>
+
+    </div>
+
+
+    <div style="margin-left: 35%; margin-top: 2%;">
+        <div class="circle"></div>
+
+        <div class="rectwo" , style="margin-left: 10px ; margin-right: 10px;"></div>
+
+        <div class="rects"></div>
+
+    </div>
+    
+
+</body>
+</html>
