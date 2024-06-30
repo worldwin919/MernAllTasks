@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ffefba, #ffffff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #00008b;
+            text-align: center;
+        }
+
+        form {
+            padding: 20px;
+            width: 70%;
+            max-width: 800px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        label {
+            flex: 1;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="tel"],
+        select,
+        textarea {
+            flex: 2;
+            padding: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-left: 10px;
+            display: none;
+        }
+
+        .register-button {
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .register-button:hover {
+            background: darkred;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        p a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        .languages-group {
+            margin-left: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .languages-group label {
+            margin-right: 2px
+                }
+
+                .gender-group {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3px; /* Add margin bottom for spacing */
+    margin-right: 450px;
+}
+
+        .gender-group input {
+            margin-left: 0;
+        }
+
+   .declare-group{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 31%;
+    padding-right: 20%;
+    }
+
+    .log{
+    margin-left: 10px;
+    padding-left: 20%;
+    }
+
+       
+    </style>
+</head>
+<body>
+    <h1>Registration form</h1>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName">
+            <span class="error" id="firstNameError">POOR</span>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName">
+            <span class="error" id="lastNameError">POOR</span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <span class="error" id="emailError">POOR</span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <span class="error" id="passwordError">POOR</span>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Re-enter Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword">
+            <span class="error" id="confirmPasswordError">POOR OR MISMATCH</span>
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="gender-group">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age">
+            <span class="error" id="ageError">POOR</span>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber">
+            <span class="error" id="phoneNumberError">POOR</span>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address"></textarea>
+            <span class="error" id="addressError">POOR</span>
+        </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" id="state" name="state">
+            <span class="error" id="stateError">POOR</span>
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="">Choose your country</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="UK">UK</option>
+            </select>
+            <span class="error" id="countryError">POOR</span>
+        </div>
+        <div class="form-group languages-group">
+            <label>Languages known</label>
+            <label for="english">English</label>
+            <input type="checkbox" id="english" name="language" value="English">
+            <label for="kannada">Kannada</label>
+            <input type="checkbox" id="kannada" name="language" value="Kannada">
+            <label for="hindi">Hindi</label>
+            <input type="checkbox" id="hindi" name="language" value="Hindi">
+            <label for="telugu">Telugu</label>
+            <input type="checkbox" id="telugu" name="language" value="Telugu">
+        </div>
+        <div class="form-group declare-group">
+            <input type="checkbox" id="declaration" name="declaration">
+            <label for="declaration">Hereby I declare all the given details are true</label>
+        </div>
+
+        <p id="log"><a href="#">Log in to Ethnus website</a></p>
+        <button type="submit" class="register-button">REGISTER</button>
+
+    </form>
+    <script>
+        function validateForm() {
+            var valid = true;
+
+            // Validate First Name
+            var firstName = document.getElementById("firstName").value;
+            if (firstName == "") {
+                document.getElementById("firstNameError").style.display = "inline";
+                valid = false;
+            } else {
+                document.getElementById("firstNameError").style.display = "none";
+            }
+
+            // Validate Last Name
+            var lastName = document.getElementById("lastName").value;
+            if (lastName == "") {
+                document.getElementById("lastNameError").style.display = "inline";
+                valid = false;
+            } else {
+                document.getElementById("lastNameError").style.display = "none";
+            }
+
+            // Validate Email
+            var email = document.getElementById("email").value;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email == "" || !emailPattern.test(email)) {
+                document.getElementById("emailError").style.display = "inline";
+                valid = false;
+            } else {
+                document.getElementById("emailError").style.display = "none";
+            }
+
+            // Validate Password
+            var password = document.getElementById("password").value;
+            if (password == "") {
+                document.getElementById("passwordError").style.display = "inline";
+                valid = false;
+            } else {
+                document.getElementById("passwordError").style.display = "none";
+            }
+
+            // Validate Confirm Password
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            if (confirmPassword == "" || confirmPassword != password) {
+                document.getElementById("confirmPasswordError").style.display = "inline";
+                valid = false;
+            } else {
+                document.getElementById("confirmPasswordError").style.display = "none";
+            }
+
+            // Validate Age
+            var age = document.getElementById("age").value;
+            if (age == "" || isNaN(age)) {
+                document.getElementById("ageError").style.display = "inline";
+                valid = false;
+            } else {
+                document.getElementById("ageError").style.display = "none";
+            }
+
+            // Validate Phone Number
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var phonePattern = /^[0-9]{10}$/;
+            if (phoneNumber == "" || !phonePattern.test(phoneNumber)) {
+                document.getElementById("phoneNumberError").style.display = "inline";
+                valid = false;
+            } else {
+                document.getElementById("phoneNumberError").style.display = "none";
+            }
+
+            // Validate Address
+            var address = document.getElementById("address").value;
+            if (address == "") {
+                document.getElementById("addressError").style.display = "inline";
+                valid = false;
+            } else {
+                document.getElementById("addressError").style.display = "none";
+            }
+
+            // Validate State
+            var state = document.getElementById("state").value;
+            if (state == "") {
+                document.getElementById("stateError").style.display = "inline";
+                valid = false;
+            } else {
+                document.getElementById("stateError").style.display = "none";
+            }
+
+            // Validate Country
+            var country = document.getElementById("country").value;
+            if (country == "") {
+                document.getElementById("countryError").style.display = "inline";
+                valid = false;
+            } else {
+                document.getElementById("countryError").style.display = "none";
+            }
+
+            return valid;
+        }
+    </script>
+</body>
+</html>

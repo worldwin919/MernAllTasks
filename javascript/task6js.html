@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <link rel="stylesheet" href="styles.css">
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #efe9e9a9;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+}
+
+.login-box {
+    width: 100%;
+}
+
+.login-box h1 {
+    font-family: 'Itallic' cursive;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.form-group .icon {
+    position: absolute;
+    left: 10px;
+    font-size: 20px;
+    color: #999;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+
+.btn {
+    background-color: #3897f0;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #3186c1;
+}
+
+.error {
+    color: red;
+    display: none;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.options label {
+    font-size: 12px;
+}
+
+.options .forgot-password {
+    font-size: 12px;
+    color: #00376b;
+    text-decoration: none;
+}
+
+.options .forgot-password:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+}
+
+p a {
+    color: #00376b;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+</style>
+
+<script>
+    function validateForm() {
+    var valid = true;
+
+    // Username validation
+    var username = document.getElementById("username").value;
+    if (username == "") {
+        document.getElementById("usernameError").style.display = "block";
+        valid = false;
+    } else {
+        document.getElementById("usernameError").style.display = "none";
+    }
+
+    // Password validation
+    var password = document.getElementById("password").value;
+    if (password == "") {
+        document.getElementById("passwordError").style.display = "block";
+        valid = false;
+    } else {
+        document.getElementById("passwordError").style.display = "none";
+    }
+
+    return valid;
+}
+
+</script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1>Instagram</h1>
+            <form id="loginForm" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <span class="icon">&#128100;</span>
+                    <input type="text" id="username" name="username" placeholder="Username">
+                </div>
+                <span class="error" id="usernameError">This field is required</span>
+                <div class="form-group">
+                    <span class="icon">&#128274;</span>
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+                <span class="error" id="passwordError">This field is required</span>
+                <input type="submit" value="Log in" class="btn">
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <p>Don't have an account? <a href="#" class="sign-up">Sign up here.</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

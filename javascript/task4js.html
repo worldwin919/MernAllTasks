@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Date and Time (IST)</title>
+</head>
+<body>
+    <h1>Get Current Date and Time</h1>
+    <button onclick="getDate()">Get Date (DD/MM/YYYY)</button>
+    <button onclick="getTime()">Get Time (IST)</button>
+    <p id="result"></p>
+
+    <script>
+function getDate() {
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); // Jan is 0!
+  const yyyy = today.getFullYear();
+
+  const formattedDate = dd + '/' + mm + '/' + yyyy;
+  document.getElementById("result").textContent = "Date (DD/MM/YYYY): " + formattedDate;
+}
+
+function getTime() {
+  const today = new Date();
+  const hours = today.getHours().toString().padStart(2, '0');
+  const minutes = today.getMinutes().toString().padStart(2, '0');
+  const seconds = today.getSeconds().toString().padStart(2, '0');
+
+  // Format time with optional AM/PM (replace with IST formatting if needed)
+  // const formattedTime = hours + ':' + minutes + ':' + seconds + (hours >= 12 ? ' PM' : ' AM');
+  const formattedTime = hours + ':' + minutes + ':' + seconds;
+
+  document.getElementById("result").textContent = "Time (IST): " + formattedTime;
+}
+</script>
+</body>
+</html>
